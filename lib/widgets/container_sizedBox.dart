@@ -11,31 +11,42 @@ class Container_SizedBox extends StatelessWidget {
       appBar: AppBar(
         title: Text('Container & SizedBox'),
       ),
-      body: Center(
-        child: Container(
-          // color: Colors.blue,
-          height: 100,
-          width: 100,
-          decoration: BoxDecoration(
-              color: Colors.blue,
-              // shape: BoxShape.circle,
-              // borderRadius: BorderRadius.circular(20),
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(20),
-                bottomRight: Radius.circular(20),
-              ),
-              boxShadow: [
-                BoxShadow(blurRadius: 20, spreadRadius: 5, color: Colors.red)
-              ]),
-          child: Center(
-            child: Text(
-              'Hello',
-              style: TextStyle(
-                fontSize: 20,
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Container(
+            // color: Colors.blue,
+            height: 100,
+            width: 100,
+            decoration: BoxDecoration(
+                color: Colors.blue,
+                // shape: BoxShape.circle,
+                // borderRadius: BorderRadius.circular(20),
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(20),
+                  bottomRight: Radius.circular(20),
+                ),
+                boxShadow: [
+                  BoxShadow(blurRadius: 20, spreadRadius: 5, color: Colors.red)
+                ]),
+            child: Center(
+              child: Text(
+                'Hello',
+                style: TextStyle(
+                  fontSize: 20,
+                ),
               ),
             ),
           ),
-        ),
+
+          // SIZED BOX
+          SizedBox(
+            height: 150,
+          ),
+          Container(
+            child: Text('Hello'),
+          ),
+        ],
       ),
     );
   }
